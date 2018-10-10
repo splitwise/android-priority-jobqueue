@@ -530,9 +530,8 @@ public class JobManager {
             try {
                 return get();
             } catch (Throwable t) {
-                JqLog.e(t, "message is not complete");
+                throw new RuntimeException(t);
             }
-            throw new RuntimeException("cannot get the result of the JobManager query");
         }
 
         @Override
